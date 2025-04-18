@@ -1,60 +1,111 @@
+# 📊 Clustering using Scikit-Learn
 
-# Clustering on Wine Dataset
+This project conducts a **comparative analysis** of three clustering algorithms—**KMeans**, **Hierarchical Clustering**, and **Mean Shift**—on the popular **Iris dataset**, under multiple preprocessing scenarios.
 
-Author: **Krish Kumar**  
-Roll Number: **102203848**
+## 🔍 Objective
 
-## Project Overview
-
-This project applies multiple clustering algorithms to the popular Wine dataset from scikit-learn, evaluating the results under various preprocessing conditions.
-
-The Wine dataset contains **13 features** describing different chemical properties of wines, classified into three types.
-
-## Key Components
-
-- **Preprocessing Techniques**:
-  - No Processing
-  - Normalization (Min-Max Scaling)
-  - Standardization (Z-score Scaling)
-  - PCA (Principal Component Analysis) to 2 dimensions
-  - Standardization + Normalization
-  - Standardization + Normalization + PCA
-
-- **Clustering Algorithms**:
-  - **KMeans** (for clusters = 3, 4, 5)
-  - **Hierarchical (Agglomerative)** Clustering (for clusters = 3, 4, 5)
-  - **MeanShift** (automatic bandwidth estimation)
-
-- **Evaluation Metrics**:
-  - **Silhouette Score**
-  - **Calinski-Harabasz Index**
-  - **Davies-Bouldin Index**
-
-## Results
-
-The project collects and displays the clustering performance across all preprocessing techniques and clustering methods using three popular cluster evaluation metrics.
-
-## Technologies Used
-
-- Python
-- Libraries:
-  - numpy
-  - pandas
-  - matplotlib
-  - seaborn
-  - scikit-learn
-
-## How to Run
-
-1. Install the required libraries if not already installed:
-    ```bash
-    pip install numpy pandas matplotlib seaborn scikit-learn
-    ```
-
-2. Run the Python file. It will print the clustering performance table directly.
-
-## License
-
-This project is licensed for educational purposes.
+To compare the performance of different clustering algorithms on various versions of preprocessed data using standard clustering evaluation metrics.
 
 ---
+
+## 🧠 Algorithms Compared
+
+- **KMeans Clustering**
+- **Agglomerative (Hierarchical) Clustering**
+- **Mean Shift Clustering**
+
+---
+
+## ⚙️ Preprocessing Techniques Applied
+
+The dataset is transformed using the following approaches before clustering:
+
+1. **No Processing** (Raw data)
+2. **Normalization** (MinMaxScaler)
+3. **Standardization** (StandardScaler)
+4. **PCA** (Principal Component Analysis with 2 components)
+5. **Standardization + Normalization** (T+N)
+6. **Standardization + Normalization + PCA** (T+N+PCA)
+
+---
+
+## 📈 Evaluation Metrics
+
+Each clustering result is evaluated using:
+
+- **Silhouette Score**
+- **Calinski-Harabasz Index**
+- **Davies-Bouldin Score**
+
+---
+
+## 📊 Visualizations
+
+The project also includes a **bar plot** to visualize Silhouette Scores for KMeans clustering across different preprocessing pipelines and cluster sizes.
+
+---
+
+## 🗃️ Dataset
+
+- **Name**: Iris Dataset
+- **Source**: `sklearn.datasets.load_iris()`
+- **Features**: 4 (Sepal Length, Sepal Width, Petal Length, Petal Width)
+- **Classes**: 3
+
+---
+
+## 📁 Project Structure
+
+```
+├── clustering_comparative_study.py  # Main script
+├── clustering_comparison_results.csv  # (Optional) Saved results
+└── README.md
+```
+
+---
+
+## 🚀 How to Run
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/clustering-comparative-study.git
+   cd clustering-comparative-study
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the script**
+   ```bash
+   python clustering_comparative_study.py
+   ```
+
+---
+
+## 📝 Requirements
+
+- Python 3.x
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+
+*(All can be installed using `pip install -r requirements.txt`)*
+
+---
+
+## 📌 Key Insights
+
+- PCA drastically improves performance on Mean Shift clustering.
+- Normalization + PCA gives balanced performance for KMeans.
+- Hierarchical clustering is consistent across different preprocessing types.
+
+---
+
+
+## 📚 License
+
+This project is open-source and available under the [MIT License](LICENSE).
